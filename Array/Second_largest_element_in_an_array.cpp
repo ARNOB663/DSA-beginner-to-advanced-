@@ -57,9 +57,29 @@ int secondLargestElement(int arr[],int n){
         if(arr[i]>second_large && arr[i]!=large)//find the second largest element
             second_large=arr[i];
     }
-    return second_large;
-
-    
+    return second_large;   
+}
+//3. more efficient than above method
+// time complexity O(n)
+int secondLargestElement2(int arr[],int n){
+    int first=arr[0];
+    int second=INT_MIN;
+    for(int i=1;i<n;i++)
+    {
+       if(arr[i]>first)
+       {
+        second=first;
+        first=arr[i];
+       }
+       else
+       {
+         if(arr[i]>second && arr[i] >first)
+         {
+            second=arr[i];
+         }
+       }
+    }
+    return second;
 }
 int main(){
     int arr[]={1,2,3,4,5,6,7,8,9,10};
