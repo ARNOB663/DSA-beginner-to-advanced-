@@ -35,8 +35,8 @@ int maxElement(int arr[],int n){
 int main(){
     int arr[]={1,2,3,4,5,6,7,8,9,10};
     int n=sizeof(arr)/sizeof(arr[0]);
-    cout<<sortArray(arr,n)<<endl;
-    cout<<maxElement(arr,n)<<endl;
+    cout<<sortArray(arr,n)<<endl;//using sort function
+    cout<<maxElement(arr,n)<<endl;//using max function
     return 0;
 }
 
