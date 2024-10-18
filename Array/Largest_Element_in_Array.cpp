@@ -24,7 +24,6 @@ int sortArray(int arr[],int n){
 }
 //2. using max function more efficient than sorting the array and then returning the last element
 // time complexity O(n)
-
 int maxElement(int arr[],int n){
     int max=arr[0];
     for(int i=1;i<n;i++){
