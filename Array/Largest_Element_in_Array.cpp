@@ -1,6 +1,7 @@
 //find the largest element in an array
 //here we will show 3 methods to find the largest element in an array brute force, sorting and using max function
 //1. sort the array and return the last element
+//problem link:https://www.naukri.com/code360/problems/largest-element-in-the-array-largest-element-in-the-array_5026279
 #include<iostream>
 using namespace std;
 //1. sort the array and return the last element
@@ -36,6 +37,6 @@ int main(){
     int n=sizeof(arr)/sizeof(arr[0]);
     cout<<sortArray(arr,n)<<endl;
     cout<<maxElement(arr,n)<<endl;
-    
     return 0;
 }
+
