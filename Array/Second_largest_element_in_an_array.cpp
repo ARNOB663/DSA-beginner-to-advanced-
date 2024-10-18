@@ -1,0 +1,49 @@
+//find the second lergest array in an array
+//problem link:https://www.naukri.com/code360/problems/second-largest-element-in-the-array-second-largest-element-in-the-array_5026280s
+#include<iostream>
+using namespace std;
+//1. sort the array and return the second last element
+int sortArray(int arr[],int n){
+    //sort the array
+    //using selection sort
+    // time complexity O(n^2)
+    for(int i=0;i<n-1;i++){
+        int min=i;
+        for(int j=i+1;j<n;j++){
+            if(arr[j]<arr[min]){
+                min=j;
+            }
+        }
+        int temp=arr[i];
+        arr[i]=arr[min];
+        arr[min]=temp;
+    }
+    //find the second largest element 
+    int secondLargest;
+    for(int i=n-2;i>=0;i--)
+    {
+        if(arr[i]!=arr[n-1]){
+            secondLargest=arr[i]; //time complexity O(n)
+            break;
+        }
+    }
+    if (secondLargest==arr[n-1]) //if all elements are same
+    {
+        return -1;
+    }
+    else
+    {
+        return secondLargest;
+    }
+}
+//2. using max function more efficient than sorting the array and then returning the last element
+// time complexity O(n)
+
+
+int main(){
+    int arr[]={1,2,3,4,5,6,7,8,9,10};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    cout<<sortArray(arr,n)<<endl;//using sort function
+
+    return 0;
+}
