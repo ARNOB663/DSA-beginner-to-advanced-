@@ -7,6 +7,7 @@ using namespace std;
 int sortArray(int arr[],int n){
     //sort the array
     //using selection sort
+    // time complexity O(n^2)
     for(int i=0;i<n-1;i++){
         int min=i;
         for(int j=i+1;j<n;j++){
@@ -20,7 +21,9 @@ int sortArray(int arr[],int n){
     }
     return arr[n-1];
 }
-//2. using max function
+//2. using max function more efficient than sorting the array and then returning the last element
+// time complexity O(n)
+
 int maxElement(int arr[],int n){
     int max=arr[0];
     for(int i=1;i<n;i++){
@@ -31,6 +34,8 @@ int maxElement(int arr[],int n){
 int main(){
     int arr[]={1,2,3,4,5,6,7,8,9,10};
     int n=sizeof(arr)/sizeof(arr[0]);
-    cout<<largestElement(arr,n);
+    cout<<sortArray(arr,n)<<endl;
+    cout<<maxElement(arr,n)<<endl;
+    
     return 0;
 }
