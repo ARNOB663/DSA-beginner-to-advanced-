@@ -3,12 +3,28 @@
 //1. sort the array and return the last element
 #include<iostream>
 using namespace std;
-int largestElement(int arr[],int n){
+//1. sort the array and return the last element
+int sortArray(int arr[],int n){
+    //sort the array
+    //using selection sort
+    for(int i=0;i<n-1;i++){
+        int min=i;
+        for(int j=i+1;j<n;j++){
+            if(arr[j]<arr[min]){
+                min=j;
+            }
+        }
+        int temp=arr[i];
+        arr[i]=arr[min];
+        arr[min]=temp;
+    }
+    return arr[n-1];
+}
+//2. using max function
+int maxElement(int arr[],int n){
     int max=arr[0];
     for(int i=1;i<n;i++){
-        if(arr[i]>max){
-            max=arr[i];
-        }
+        max=max>arr[i]?max:arr[i];
     }
     return max;
 }
