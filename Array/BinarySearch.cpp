@@ -35,6 +35,7 @@ int binarySearch(int arr[],int n){
         else if(arr[mid]<arr[mid+1]){
             first=mid+1;
         }
+        
     }
     return secondLargest;
 }
